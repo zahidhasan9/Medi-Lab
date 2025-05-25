@@ -1,0 +1,105 @@
+import React from 'react';
+
+const menuItems = [
+  { name: 'Home', href: '#hero' },
+  { name: 'About', href: '#about' },
+  { name: 'Services', href: '#services' },
+  {
+    name: 'Departments',
+    dropdown: true,
+    items: [
+      { name: 'Nephrology', href: '#departments-tab-1' },
+      { name: 'Dialysis', href: '#departments-tab-2' },
+      { name: 'Kidney Transplantation', href: '#departments-tab-3' },
+      { name: 'Kidney Disease Diagnosis', href: '#departments-tab-4' },
+      { name: 'Emergency Care', href: '#departments-tab-5' }
+    ]
+  },
+  { name: 'Donor', href: '#donor' },
+  { name: 'Doctors', href: '#doctors' },
+  {
+    name: 'Learn Kidney',
+    dropdown: true,
+    items: [
+      { name: 'Learn Kidney 1', href: '#' },
+      { name: 'Learn Kidney 2', href: '#' }
+    ]
+  },
+  { name: 'Contact', href: '#contact' }
+];
+
+const Navbar = () => {
+  return (
+    <div>
+      <header id="header" className="header sticky-top">
+        <div className="topbar d-flex align-items-center">
+          <div className="container d-flex justify-content-center justify-content-md-between">
+            <div className="contact-info d-flex align-items-center">
+              <i className="bi bi-envelope d-flex align-items-center">
+                <a href="mailto:afiaanjum52@gmail.com">afiaanjum52@gmail.com</a>
+              </i>
+              <i className="bi bi-phone d-flex align-items-center ms-4">
+                <span>+8001729372327</span>
+              </i>
+            </div>
+            <div className="social-links d-none d-md-flex align-items-center">
+              <a href="#" className="twitter">
+                <i className="bi bi-twitter-x" />
+              </a>
+              <a href="#" className="facebook">
+                <i className="bi bi-facebook" />
+              </a>
+              <a href="#" className="instagram">
+                <i className="bi bi-instagram" />
+              </a>
+              <a href="#" className="linkedin">
+                <i className="bi bi-linkedin" />
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div className="branding d-flex align-items-center">
+          <div className="container position-relative d-flex align-items-center justify-content-between">
+            <a href="index.html" className="logo d-flex align-items-center me-auto">
+              <h1 className="sitename">Renal Health Portal</h1>
+            </a>
+
+            {/* ✅ Navigation Menu */}
+            <nav id="navmenu" className="navmenu">
+              <ul>
+                {menuItems.map((item, index) =>
+                  item.dropdown ? (
+                    <li key={index} className="dropdown">
+                      <a href="#">
+                        <span>{item.name}</span> <i className="bi bi-chevron-down toggle-dropdown" />
+                      </a>
+                      <ul>
+                        {item.items.map((subItem, subIndex) => (
+                          <li key={subIndex}>
+                            <a href={subItem.href}>{subItem.name}</a>
+                          </li>
+                        ))}
+                      </ul>
+                    </li>
+                  ) : (
+                    <li key={index}>
+                      <a href={item.href}>{item.name}</a>
+                    </li>
+                  )
+                )}
+              </ul>
+              <i className="mobile-nav-toggle d-xl-none bi bi-list" />
+            </nav>
+
+            <a className="cta-btn d-none d-sm-block" href="#appointment">
+              Make an Appointment
+            </a>
+          </div>
+        </div>
+      </header>
+    </div>
+  );
+};
+
+export default Navbar;
