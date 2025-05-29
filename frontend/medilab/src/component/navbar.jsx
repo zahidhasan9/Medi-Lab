@@ -1,28 +1,28 @@
 import React from 'react';
 
 const menuItems = [
-  { name: 'Home', href: '#hero' },
+  { name: 'Home', href: '/' },
   { name: 'About', href: '#about' },
   { name: 'Services', href: '#services' },
-  {
-    name: 'Departments',
-    dropdown: true,
-    items: [
-      { name: 'Nephrology', href: '#departments-tab-1' },
-      { name: 'Dialysis', href: '#departments-tab-2' },
-      { name: 'Kidney Transplantation', href: '#departments-tab-3' },
-      { name: 'Kidney Disease Diagnosis', href: '#departments-tab-4' },
-      { name: 'Emergency Care', href: '#departments-tab-5' }
-    ]
-  },
-  { name: 'Donor', href: '#donor' },
-  { name: 'Doctors', href: '#doctors' },
+  // {
+  //   name: 'Departments',
+  //   dropdown: true,
+  //   items: [
+  //     { name: 'Nephrology', href: '#departments-tab-1' },
+  //     { name: 'Dialysis', href: '#departments-tab-2' },
+  //     { name: 'Kidney Transplantation', href: '#departments-tab-3' },
+  //     { name: 'Kidney Disease Diagnosis', href: '#departments-tab-4' },
+  //     { name: 'Emergency Care', href: '#departments-tab-5' }
+  //   ]
+  // },
+  { name: 'Find Donor', href: '/donorlist' },
+  { name: 'Doctors', href: '/doctors' },
   {
     name: 'Learn Kidney',
     dropdown: true,
     items: [
-      { name: 'Learn Kidney 1', href: '#' },
-      { name: 'Learn Kidney 2', href: '#' }
+      { name: 'Learn Kidney', href: '/learn' },
+      { name: 'Helth of Kidney', href: '/kidney' }
     ]
   },
   { name: 'Contact', href: '#contact' }
@@ -92,8 +92,11 @@ const Navbar = () => {
               <i className="mobile-nav-toggle d-xl-none bi bi-list" />
             </nav>
 
-            <a className="cta-btn d-none d-sm-block" href="#appointment">
-              Make an Appointment
+            <a className="cta-btn d-none d-sm-block" href="/donor">
+              Become a Donor
+            </a>
+            <a className="cta-btn d-none d-sm-block" href="/appointment">
+              Appointment
             </a>
           </div>
         </div>
