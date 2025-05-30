@@ -92,9 +92,9 @@ const Appointment = () => {
             />
           </div>
           <div>
-            <label className="block text-gray-700 font-semibold mb-2">Appointment Date & Time</label>
+            <label className="block text-gray-700 font-semibold mb-2">Appointment Date </label>
             <input
-              type="datetime-local"
+              type="date"
               name="date"
               value={formData.date}
               onChange={handleChange}
@@ -102,7 +102,7 @@ const Appointment = () => {
               required
             />
           </div>
-          <div>
+          {/* <div>
             <label className="block text-gray-700 font-semibold mb-2">Department</label>
             <select
               name="department"
@@ -116,7 +116,7 @@ const Appointment = () => {
               <option value="Neurology">Neurology</option>
               <option value="Orthopedics">Orthopedics</option>
             </select>
-          </div>
+          </div> */}
           <div>
             <label className="block text-gray-700 font-semibold mb-2">Doctor</label>
             <select

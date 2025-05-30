@@ -19,6 +19,7 @@ import LearnKidney from './component/learnkidney';
 import HealthOfKidney from './component/healthKidney';
 import DoctorList from './component/doctorList';
 import DonorList from './component/DonerList';
+import Diet from './DietPlan/Diet';
 
 // PrivateRoute
 import PrivateRoute from './HOC/PrivateRoute';
@@ -27,6 +28,7 @@ import PrivateRoute from './HOC/PrivateRoute';
 import Admin from './AdminComponent/Admin';
 import LoginForm from './component/login';
 import RegisterForm from './component/register';
+
 import Footer from './component/footer';
 
 import './App.css';
@@ -67,9 +69,9 @@ function App() {
         <Route path="/donorlist" element={<DonorList />} />
         <Route path="/learn" element={<LearnKidney />} />
         <Route path="/kidney" element={<HealthOfKidney />} />
+        <Route path="/diet" element={<Diet />} />
         <Route path="/login" element={<LoginForm />} />
         <Route path="/register" element={<RegisterForm />} />
-        DonorList
       </Routes>
       <Test />
       <Toaster position="top-right" reverseOrder={false} />

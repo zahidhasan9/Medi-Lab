@@ -1,4 +1,4 @@
-import React from 'react';
+import { useState } from 'react';
 
 const menuItems = [
   { name: 'Home', href: '/' },
@@ -29,8 +29,19 @@ const menuItems = [
 ];
 
 const Navbar = () => {
+  const [click, setClick] = useState(false);
+  const [dropdown, setDropdown] = useState(false);
+
+  const handleClick = () => {
+    setClick((prev) => !prev);
+  };
+
+  const handleDropdown = () => {
+    setDropdown((prev) => !prev);
+  };
+
   return (
-    <div>
+    <div className={click ? 'starter-page-page mobile-nav-active' : 'starter-page-page'}>
       <header id="header" className="header sticky-top">
         <div className="topbar d-flex align-items-center">
           <div className="container d-flex justify-content-center justify-content-md-between">
@@ -70,9 +81,9 @@ const Navbar = () => {
               <ul>
                 {menuItems.map((item, index) =>
                   item.dropdown ? (
-                    <li key={index} className="dropdown">
-                      <a href="#">
-                        <span>{item.name}</span> <i className="bi bi-chevron-down toggle-dropdown" />
+                    <li key={index} className="dropdown active ">
+                      <a href="#" className="active">
+                        <span>{item.name}</span> <i className="bi bi-chevron-down toggle-dropdown  " />
                       </a>
                       <ul>
                         {item.items.map((subItem, subIndex) => (
@@ -89,7 +100,10 @@ const Navbar = () => {
                   )
                 )}
               </ul>
-              <i className="mobile-nav-toggle d-xl-none bi bi-list" />
+              <i
+                onClick={handleClick}
+                className={!click ? 'mobile-nav-toggle d-xl-none bi bi-list' : 'mobile-nav-toggle d-xl-none bi bi-x'}
+              />
             </nav>
 
             <a className="cta-btn d-none d-sm-block" href="/donor">

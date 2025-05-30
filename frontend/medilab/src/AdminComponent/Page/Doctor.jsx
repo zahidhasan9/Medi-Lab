@@ -13,6 +13,12 @@ const Dashboard = () => {
   const [doctorForm, setDoctorForm] = useState({
     name: '',
     specialization: '',
+    bmdc_no: '',
+    degree: '',
+    hospital: '',
+    location: '',
+    visiting_Hours: '',
+    img: '',
     phone: ''
   });
 
@@ -23,7 +29,17 @@ const Dashboard = () => {
   const handleAddDoctor = () => {
     if (!doctorForm.name || !doctorForm.specialization || !doctorForm.phone) return alert('All fields are required');
     dispatch(createDoctor(doctorForm));
-    setDoctorForm({ name: '', specialization: '', phone: '' });
+    setDoctorForm({
+      name: '',
+      specialization: '',
+      bmdc_no: '',
+      degree: '',
+      hospital: '',
+      location: '',
+      visiting_Hours: '',
+      img: '',
+      phone: ''
+    });
     setShowModal(false);
   };
 
@@ -94,6 +110,54 @@ const Dashboard = () => {
                 name="specialization"
                 placeholder="Specialization"
                 value={doctorForm.specialization}
+                onChange={handleInputChange}
+                className="w-full border border-gray-300 px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+              <input
+                type="text"
+                name="bmdc_no"
+                placeholder="BMDC No"
+                value={doctorForm.bmdc_no}
+                onChange={handleInputChange}
+                className="w-full border border-gray-300 px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+              <input
+                type="text"
+                name="degree"
+                placeholder="Degree"
+                value={doctorForm.degree}
+                onChange={handleInputChange}
+                className="w-full border border-gray-300 px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+              <input
+                type="text"
+                name="hospital"
+                placeholder="Hospital"
+                value={doctorForm.hospital}
+                onChange={handleInputChange}
+                className="w-full border border-gray-300 px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+              <input
+                type="text"
+                name="location"
+                placeholder="Location"
+                value={doctorForm.location}
+                onChange={handleInputChange}
+                className="w-full border border-gray-300 px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+              <input
+                type="text"
+                name="visiting_Hours"
+                placeholder="Visiting Hours"
+                value={doctorForm.visiting_Hours}
+                onChange={handleInputChange}
+                className="w-full border border-gray-300 px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+              <input
+                type="text"
+                name="img"
+                placeholder="Photo link"
+                value={doctorForm.img}
                 onChange={handleInputChange}
                 className="w-full border border-gray-300 px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
               />

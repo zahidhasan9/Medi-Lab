@@ -1,4 +1,8 @@
-import React from 'react';
+import { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { createAppointment } from '../features/appointmentSlice';
+import { getallDoctor } from '../features/doctorSlice';
+
 import doc1Img from '../assets/img/doctors/doctors-1.jpg';
 import doc2Img from '../assets/img/doctors/doctors-2.jpg';
 import doc3Img from '../assets/img/doctors/doctors-3.jpg';
@@ -48,6 +52,14 @@ const doctorsData = [
 ];
 
 const Doctor = () => {
+  const dispatch = useDispatch();
+  const { doctors } = useSelector((state) => state.doctor);
+  console.log('doc', doctors);
+
+  useEffect(() => {
+    dispatch(getallDoctor());
+  }, [dispatch]);
+
   return (
     <div>
       {/* Doctors Section */}
@@ -62,7 +74,7 @@ const Doctor = () => {
 
         <div className="container">
           <div className="row gy-4">
-            {doctorsData.map((doctor, index) => (
+            {doctors.map((doctor, index) => (
               <div key={index} className="col-lg-6" data-aos="fade-up" data-aos-delay={(index + 1) * 100}>
                 <div className="team-member d-flex align-items-start">
                   <div className="pic">
@@ -70,9 +82,14 @@ const Doctor = () => {
                   </div>
                   <div className="member-info">
                     <h4>{doctor.name}</h4>
-                    <span>{doctor.title}</span>
-                    <p>{doctor.description}</p>
-                    <div className="social">
+                    <span>{doctor.specialization}</span>
+                    <p>{doctor.degree}</p>
+                    <p>{doctor.bmdc_no}</p>
+                    <p>{doctor.hospital}</p>
+                    <p>{doctor.location}</p>
+                    <p>{doctor.visiting_Hours}</p>
+                    <p>{doctor.phone}</p>
+                    {/* <div className="social">
                       <a href={`mailto:${doctor.email}`}>
                         <i className="bi bi-envelope" />
                       </a>
@@ -82,7 +99,7 @@ const Doctor = () => {
                       <a href={doctor.linkedin}>
                         <i className="bi bi-linkedin" />
                       </a>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </div>

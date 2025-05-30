@@ -1,24 +1,40 @@
-import { Chat } from '../models/Chat';
+// controllers/chat.controller.js
 
-// Send message
+import Chat from '../models/Chat.js';
+import Appointment from '../models/Appointment.js';
+
+// ✅ Send Message (only if appointment is approved)
 export const sendMessage = async (req, res) => {
   try {
-    const chat = new Chat(req.body);
-    await chat.save();
-    res.status(201).json(chat);
+    const { senderId, receiverId, appointmentId, message } = req.body;
+
+    // Check if appointment is approved
+    const appointment = await Appointment.findById(appointmentId);
+    if (!appointment || appointment.status !== 'approved') {
+      return res.status(403).json({ message: 'You cannot chat until appointment is approved.' });
+    }
+
+    const newMessage = await Chat.create({
+      senderId,
+      receiverId,
+      appointmentId,
+      message
+    });
+
+    res.status(201).json(newMessage);
   } catch (err) {
-    res.status(400).json({ error: err.message });
+    res.status(500).json({ error: err.message });
   }
 };
 
-// Get conversation between doctor and patient
-export const getConversation = async (req, res) => {
-  const { senderId, receiverId } = req.query;
-  const messages = await Chat.find({
-    $or: [
-      { senderId, receiverId },
-      { senderId: receiverId, receiverId: senderId }
-    ]
-  }).sort({ timestamp: 1 });
-  res.json(messages);
+// ✅ Get all messages by appointment
+export const getMessagesByAppointment = async (req, res) => {
+  try {
+    const { appointmentId } = req.params;
+
+    const messages = await Chat.find({ appointmentId }).sort({ createdAt: 1 });
+    res.json(messages);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
 };

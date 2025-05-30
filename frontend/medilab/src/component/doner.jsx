@@ -12,6 +12,7 @@ const DonorForm = () => {
     address: '',
     phone: '',
     bloodGroup: '',
+    nid: '',
     donation_type: '',
     health_issues: ''
   });
@@ -28,6 +29,7 @@ const DonorForm = () => {
       age: '',
       address: '',
       phone: '',
+      nid: '',
       bloodGroup: '',
       donation_type: '',
       health_issues: ''
@@ -66,6 +68,18 @@ const DonorForm = () => {
                 className="mt-1 block w-full p-3 border border-gray-300 rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
                 required
                 value={formData.age}
+                onChange={handleChange}
+              />
+            </div>
+
+            <div className="sm:col-span-2">
+              <label className="block text-sm font-medium text-gray-700">NID Card Number</label>
+              <input
+                type="text"
+                name="nid"
+                className="mt-1 block w-full p-3 border border-gray-300 rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                required
+                value={formData.nid}
                 onChange={handleChange}
               />
             </div>

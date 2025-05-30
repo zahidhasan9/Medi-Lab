@@ -7,6 +7,7 @@ const donorSchema = new mongoose.Schema({
   phone: String,
   health_issues: String,
   donation_type: String,
+  nid: String,
   address: String,
   status: { type: String, default: 'Pending' }
 });
