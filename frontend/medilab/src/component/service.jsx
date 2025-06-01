@@ -65,6 +65,20 @@ const service = () => {
                 </div>
               </a>
             </div>
+
+            <div className="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay={500}>
+              <a href="/diet">
+                <div className="service-item position-relative">
+                  <div className="icon">
+                    <i className=" bi bi-egg-fried" />
+                  </div>
+
+                  <h3>Diet Tools</h3>
+
+                  <p>Use our map to find kidney care centers, dialysis units, and specialty clinics near you.</p>
+                </div>
+              </a>
+            </div>
           </div>
         </div>
       </section>

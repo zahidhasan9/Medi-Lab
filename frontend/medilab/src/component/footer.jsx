@@ -11,10 +11,10 @@ const footer = () => {
                 <span className="sitename">Renal Health Portal</span>
               </a>
               <div className="footer-contact pt-3">
-                <p>A108 Adam Street</p>
-                <p>New York, NY 535022</p>
+                <p>Mahakhahali</p>
+                <p>Dhaka, 1212</p>
                 <p className="mt-3">
-                  <strong>Phone:</strong> <span>+1 5589 55488 55</span>
+                  <strong>Phone:</strong> <span>+8801258655894</span>
                 </p>
                 <p>
                   <strong>Email:</strong> <span>afiaanjum52@gmail.com</span>
