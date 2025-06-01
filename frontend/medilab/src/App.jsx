@@ -14,12 +14,14 @@ import Doctor from './component/doctor';
 import Faq from './component/faq';
 import Testimonial from './component/testimonial';
 import Gallary from './component/gallary';
-import Contact from './contact';
+import Contact from './component/contact';
 import LearnKidney from './component/learnkidney';
 import HealthOfKidney from './component/healthKidney';
 import DoctorList from './component/doctorList';
 import DonorList from './component/DonerList';
 import Diet from './DietPlan/Diet';
+import HospitalLocation from './component/HospitalLocation';
+import FindAppointment from './component/FindAppoinment';
 
 // PrivateRoute
 import PrivateRoute from './HOC/PrivateRoute';
@@ -51,8 +53,6 @@ function App() {
               <About />
               <Service />
               <Helth />
-              <Doner />
-              <Doctor />
               <Faq />
               <Testimonial />
               <Gallary />
@@ -69,6 +69,8 @@ function App() {
         <Route path="/donorlist" element={<DonorList />} />
         <Route path="/learn" element={<LearnKidney />} />
         <Route path="/kidney" element={<HealthOfKidney />} />
+        <Route path="/hospital" element={<HospitalLocation />} />
+        <Route path="/myappointment" element={<FindAppointment />} />
         <Route path="/diet" element={<Diet />} />
         <Route path="/login" element={<LoginForm />} />
         <Route path="/register" element={<RegisterForm />} />

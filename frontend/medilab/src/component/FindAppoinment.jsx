@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getallAppointment, updateAppointment, deleteAppointment } from '../../features/appointmentSlice';
+import { getallAppointment, updateAppointment, deleteAppointment } from '../features/appointmentSlice';
 import { FiTrash2, FiEye } from 'react-icons/fi';
-import Table from './table/table';
+import Table from '../AdminComponent/Page/table/table';
+import { data } from 'react-router-dom';
 
 const Dashboard = () => {
   const { appointments } = useSelector((state) => state.appointment);
@@ -35,19 +36,17 @@ const Dashboard = () => {
 
   const columns = [
     { accessorKey: 'patientName', header: 'Name' },
-    { accessorKey: 'email', header: 'Email' },
+    { accessorKey: 'doctorName', header: 'Doctor' },
+    { accessorKey: 'serial', header: 'Serial' },
     { accessorKey: 'status', header: 'status' },
     { accessorKey: 'date', header: 'Date' },
     {
       accessorKey: 'action',
-      header: 'Action',
+      header: 'Viwe',
       cell: ({ row }) => (
         <div className="flex gap-3">
           <button onClick={() => setSelectedAppointment(row.original)} className="text-blue-600 hover:text-blue-800">
             <FiEye size={20} />
-          </button>
-          <button onClick={() => handleDeleteAppointment(row.original._id)} className="text-red-600 hover:text-red-800">
-            <FiTrash2 size={20} />
           </button>
         </div>
       )
@@ -57,10 +56,11 @@ const Dashboard = () => {
   return (
     <>
       <div className="bg-gray-50 min-h-screen py-10 px-4">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold mb-6 text-gray-800">Appointment Management Dashboard</h2>
+        <div className="max-w-8xl mx-auto">
+          <h2 className="text-3xl font-bold mb-6 text-gray-800">Peitent Appointment Dashboard</h2>
+          <p className="py-2 text-gray-600">Here has only available approved appointment Peitent</p>
           <div className="bg-white p-5 rounded-lg shadow">
-            <Table data={appointments} columns={columns} />
+            <Table data={appointments.filter((data) => data.status === 'approved')} columns={columns} />
           </div>
         </div>
       </div>
@@ -92,32 +92,9 @@ const Dashboard = () => {
               <p>
                 <strong>Message:</strong> {selectedAppointment.message}
               </p>
-
-              <div className="flex gap-x-2">
-                <label className="font-semibold block mb-1">Paitent serial no:</label>
-                <input
-                  className=" max-w-sm px-4  border border-gray-300 rounded-lg  focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm"
-                  type="text"
-                  name="serial"
-                  value={selectedAppointment.serial}
-                  onChange={(e) => setSerial(e.target.value)}
-                  placeholder="Set serial"
-                />
-              </div>
-
-              <div>
-                <label className="font-semibold block mb-1">Status</label>
-                <select
-                  className="w-full border px-3 py-2 rounded"
-                  value={statusUpdate}
-                  onChange={(e) => setStatusUpdate(e.target.value)}
-                >
-                  <option value="">Select Status</option>
-                  <option value="pending">Pending</option>
-                  <option value="approved">Approved</option>
-                  <option value="cancelled">Cancelled</option>
-                </select>
-              </div>
+              <p>
+                <strong>Serial:</strong> {selectedAppointment.serial}
+              </p>
             </div>
 
             <div className="flex justify-end gap-3 mt-6">
@@ -126,12 +103,6 @@ const Dashboard = () => {
                 className="px-4 py-2 bg-gray-300 rounded hover:bg-gray-400"
               >
                 Close
-              </button>
-              <button
-                onClick={handleStatusChange}
-                className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
-              >
-                Update Status
               </button>
             </div>
           </div>

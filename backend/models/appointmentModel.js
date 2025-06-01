@@ -8,6 +8,7 @@ const appointmentSchema = new mongoose.Schema({
   message: String,
   date: String,
   phone: String,
+  serial: String,
   time: String,
   status: { type: String, default: 'Pending' }
 });

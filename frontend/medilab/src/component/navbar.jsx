@@ -2,8 +2,8 @@ import { useState } from 'react';
 
 const menuItems = [
   { name: 'Home', href: '/' },
-  { name: 'About', href: '#about' },
-  { name: 'Services', href: '#services' },
+  { name: 'Appointment Find', href: '/myappointment' },
+  // { name: 'Services', href: '#services' },
   // {
   //   name: 'Departments',
   //   dropdown: true,
@@ -25,7 +25,7 @@ const menuItems = [
       { name: 'Helth of Kidney', href: '/kidney' }
     ]
   },
-  { name: 'Contact', href: '#contact' }
+  { name: 'Contact', href: '/hospital' }
 ];
 
 const Navbar = () => {

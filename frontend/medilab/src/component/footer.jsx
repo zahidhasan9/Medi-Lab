@@ -39,79 +39,19 @@ const footer = () => {
               <h4>Useful Links</h4>
               <ul>
                 <li>
-                  <a href="#">Home</a>
+                  <a href="/">Home</a>
                 </li>
                 <li>
-                  <a href="#">About us</a>
+                  <a href="/myappointment">Appointment Find</a>
                 </li>
                 <li>
-                  <a href="#">Services</a>
+                  <a href="/donorlist">Find Donor</a>
                 </li>
                 <li>
-                  <a href="#">Terms of service</a>
+                  <a href="/doctors">Find Doctors</a>
                 </li>
                 <li>
-                  <a href="#">Privacy policy</a>
-                </li>
-              </ul>
-            </div>
-            <div className="col-lg-2 col-md-3 footer-links">
-              <h4>Our Services</h4>
-              <ul>
-                <li>
-                  <a href="#">Web Design</a>
-                </li>
-                <li>
-                  <a href="#">Web Development</a>
-                </li>
-                <li>
-                  <a href="#">Product Management</a>
-                </li>
-                <li>
-                  <a href="#">Marketing</a>
-                </li>
-                <li>
-                  <a href="#">Graphic Design</a>
-                </li>
-              </ul>
-            </div>
-            <div className="col-lg-2 col-md-3 footer-links">
-              <h4>Hic solutasetp</h4>
-              <ul>
-                <li>
-                  <a href="#">Molestiae accusamus iure</a>
-                </li>
-                <li>
-                  <a href="#">Excepturi dignissimos</a>
-                </li>
-                <li>
-                  <a href="#">Suscipit distinctio</a>
-                </li>
-                <li>
-                  <a href="#">Dilecta</a>
-                </li>
-                <li>
-                  <a href="#">Sit quas consectetur</a>
-                </li>
-              </ul>
-            </div>
-            <div className="col-lg-2 col-md-3 footer-links">
-              <h4>Nobis illum</h4>
-              <ul>
-                <li>
-                  <a href="#">Ipsam</a>
-                </li>
-                <li>
-                  <a href="#">Laudantium dolorum</a>
-                </li>
-                <li>
-                  <a href="#">Dinera</a>
-                </li>
-                <li>
-                  <a href="#">Trodelas</a>
-                </li>
-                <li>
-                  <a href="#">Flexo</a>
+                  <a href="/hospital">Contact</a>
                 </li>
               </ul>
             </div>
@@ -119,38 +59,10 @@ const footer = () => {
         </div>
         <div className="container copyright text-center mt-4">
           <p>
-            © <span>Copyright</span> <strong className="px-1 sitename">Renal Health Portal</strong>{' '}
-            <span>All Rights Reserved</span>
+            © <span>Copyright</span> <strong className="px-1 sitename">Renal Health Portal || Afia Anjum</strong>{' '}
+            <span>All Rights Reserved 2025</span>
           </p>
         </div>
-        {/* Vendor JS Files */}
-        {/* Main JS File */}
-        {/* Toggle Button (can go inside footer or body) */}
-        <button id="chat-toggle" aria-label="Open Chatbot">
-          💬
-        </button>
-        {/* Chat Container */}
-        <div
-          id="chat-container"
-          style={{ display: 'none' }}
-          role="dialog"
-          aria-labelledby="chatbot-title"
-          aria-hidden="true"
-        >
-          <div id="chat-header">
-            <span id="chatbot-title">Kidney AI Assistant</span>
-            <button id="chat-close" aria-label="Close Chatbot">
-              ✖
-            </button>
-          </div>
-          <div id="chat-messages" role="log" aria-live="polite" />
-          <div id="chat-input">
-            <input type="text" id="user-input" placeholder="Ask about kidney health..." aria-label="Chat input" />
-            <button id="send-button">Send</button>
-          </div>
-        </div>
-        {/* Link styles and scripts */}
-        <link rel="stylesheet" href="assets/css/chatbot.css" />
       </footer>
     </div>
   );
