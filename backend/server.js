@@ -7,6 +7,7 @@ import adminRoutes from './routes/adminRoutes.js';
 import donorRoutes from './routes/donorRoutes.js';
 import doctorRoutes from './routes/doctorRoutes.js';
 import appointmentRoutes from './routes/appointmentRoutes.js';
+import reviewRoutes from './routes/reviewRoute.js';
 import chatRoutes from './routes/chatRoutes.js';
 
 connectDB(); // Connect to MongoDB
@@ -19,6 +20,7 @@ app.use('/api/admin', adminRoutes);
 app.use('/api/donor', donorRoutes);
 app.use('/api/doctor', doctorRoutes);
 app.use('/api/appointment', appointmentRoutes);
+app.use('/api/review', reviewRoutes);
 app.use('/api/chats', chatRoutes);
 
 const PORT = process.env.PORT || 5000;
