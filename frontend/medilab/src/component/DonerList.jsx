@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getallDonor, updateDonor, deleteDonor } from '../features/donorSlice';
+import { getallDonor } from '../features/donorSlice';
 import { FiTrash2, FiEye } from 'react-icons/fi';
 import Table from '../AdminComponent/Page/table/table';
 import ReviewForm from './reviewForm';
@@ -9,11 +9,10 @@ const Dashboard = () => {
   const dispatch = useDispatch();
 
   const token = window.localStorage.getItem('token');
-  console.log('token', token);
 
   const [selectedDonors, setSelectedDonors] = useState(null);
   const [statusUpdate, setStatusUpdate] = useState('');
-  console.log('s', statusUpdate);
+
   const status = {
     status: statusUpdate
   };

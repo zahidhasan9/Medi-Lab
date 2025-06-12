@@ -24,10 +24,9 @@ export default function LoginForm() {
   // const token = localStorage.getItem('token');
   useEffect(() => {
     if (success) {
-      setTimeout(() => navigate('/'), 1000);
+      setTimeout(() => (window.location.href = '/'), 1000);
     }
   }, [success, navigate]);
-  console.log(success);
 
   return (
     <div className="min-h-screen bg-blue-50 flex items-center justify-center px-4">

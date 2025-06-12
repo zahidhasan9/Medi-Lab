@@ -29,7 +29,7 @@ const contact = () => {
                 <i className="bi bi-geo-alt flex-shrink-0" />
                 <div>
                   <h3>Location</h3>
-                  <p>A108 Adam Street, New York, NY 535022</p>
+                  <p>Dhaka 1212</p>
                 </div>
               </div>
               {/* End Info Item */}
@@ -37,7 +37,7 @@ const contact = () => {
                 <i className="bi bi-telephone flex-shrink-0" />
                 <div>
                   <h3>Call Us</h3>
-                  <p>+1 5589 55488 55</p>
+                  <p>+880124885697</p>
                 </div>
               </div>
               {/* End Info Item */}
@@ -45,49 +45,11 @@ const contact = () => {
                 <i className="bi bi-envelope flex-shrink-0" />
                 <div>
                   <h3>Email Us</h3>
-                  <p>info@example.com</p>
+                  <p>medilab@example.com</p>
                 </div>
               </div>
               {/* End Info Item */}
             </div>
-            <div className="col-lg-8">
-              <form
-                action="forms/contact.php"
-                method="post"
-                className="php-email-form"
-                data-aos="fade-up"
-                data-aos-delay={200}
-              >
-                <div className="row gy-4">
-                  <div className="col-md-6">
-                    <input type="text" name="name" className="form-control" placeholder="Your Name" required="" />
-                  </div>
-                  <div className="col-md-6 ">
-                    <input type="email" className="form-control" name="email" placeholder="Your Email" required="" />
-                  </div>
-                  <div className="col-md-12">
-                    <input type="text" className="form-control" name="subject" placeholder="Subject" required="" />
-                  </div>
-                  <div className="col-md-12">
-                    <textarea
-                      className="form-control"
-                      name="message"
-                      rows={6}
-                      placeholder="Message"
-                      required=""
-                      defaultValue={''}
-                    />
-                  </div>
-                  <div className="col-md-12 text-center">
-                    <div className="loading">Loading</div>
-                    <div className="error-message" />
-                    <div className="sent-message">Your message has been sent. Thank you!</div>
-                    <button type="submit">Send Message</button>
-                  </div>
-                </div>
-              </form>
-            </div>
-            {/* End Contact Form */}
           </div>
         </div>
       </section>

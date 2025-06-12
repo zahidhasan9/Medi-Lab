@@ -1,8 +1,8 @@
 import { useState } from 'react';
-
+import toast from 'react-hot-toast';
 const menuItems = [
   { name: 'Home', href: '/' },
-  { name: 'Appointment Find', href: '/myappointment' },
+  { name: 'Find Appointment ', href: '/myappointment' },
   // { name: 'Services', href: '#services' },
   // {
   //   name: 'Departments',
@@ -22,7 +22,7 @@ const menuItems = [
     dropdown: true,
     items: [
       { name: 'Learn Kidney', href: '/learn' },
-      { name: 'Helth of Kidney', href: '/kidney' }
+      { name: 'Health of Kidney', href: '/kidney' }
     ]
   },
   { name: 'Contact', href: '/hospital' }
@@ -34,6 +34,14 @@ const Navbar = () => {
 
   const handleClick = () => {
     setClick((prev) => !prev);
+  };
+  const token = window.localStorage.getItem('token');
+
+  const handleLogout = () => {
+    localStorage.removeItem('token');
+    localStorage.removeItem('admin'); // optional: if you store user info
+    setTimeout(() => (window.location.href = '/'), 1000);
+    toast.success('Update Appointments Successful');
   };
 
   const handleDropdown = () => {
@@ -107,11 +115,20 @@ const Navbar = () => {
             </nav>
 
             <a className="cta-btn d-none d-sm-block" href="/donor">
-              Become a Donor
+              Be a Donor
             </a>
             <a className="cta-btn d-none d-sm-block" href="/appointment">
               Appointment
             </a>
+            {token ? (
+              <a onClick={handleLogout} className="cta-btn d-none d-sm-block cursor-pointer bg-red-500 ">
+                Log Out
+              </a>
+            ) : (
+              <a className="cta-btn d-none d-sm-block" href="/login">
+                login
+              </a>
+            )}
           </div>
         </div>
       </header>
