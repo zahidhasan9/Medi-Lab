@@ -64,14 +64,19 @@ function App() {
           <Route path="/admin" element={<Admin />} />
         </Route>
         <Route path="/appointment" element={<Appointment />} />
+
+        <Route element={<PrivateRoute />}>
+          <Route path="/myappointment" element={<FindAppointment />} />
+        </Route>
+        <Route element={<PrivateRoute />}>
+          <Route path="/diet" element={<Diet />} />
+        </Route>
         <Route path="/donor" element={<Doner />} />
         <Route path="/doctors" element={<DoctorList />} />
         <Route path="/donorlist" element={<DonorList />} />
         <Route path="/learn" element={<LearnKidney />} />
         <Route path="/kidney" element={<HealthOfKidney />} />
         <Route path="/hospital" element={<HospitalLocation />} />
-        <Route path="/myappointment" element={<FindAppointment />} />
-        <Route path="/diet" element={<Diet />} />
         <Route path="/login" element={<LoginForm />} />
         <Route path="/register" element={<RegisterForm />} />
       </Routes>
