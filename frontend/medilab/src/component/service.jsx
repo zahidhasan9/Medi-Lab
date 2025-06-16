@@ -11,18 +11,18 @@ const service = () => {
         </div>
         <div className="container cursor-pointer">
           <div className="row gy-4">
-            <a href="/learn"></a>
-            <div className="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay={100}>
-              <div className="service-item position-relative">
-                <div className="icon">
-                  <i className="fas fa-book-medical" />
+            <div className="col-lg-4 col-md-6">
+              <a href="/learn">
+                <div className="service-item position-relative">
+                  <div className="icon">
+                    <i className="fas fa-book-medical" />
+                  </div>
+
+                  <h3>Kidney Education</h3>
+
+                  <p>Explore simple, verified content about kidney diseases, treatment options, and prevention tips.</p>
                 </div>
-
-                <h3>Kidney Education</h3>
-
-                <p>Explore simple, verified content about kidney diseases, treatment options, and prevention tips.</p>
-              </div>
-              <a />
+              </a>
             </div>
             <div className="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay={200}>
               <a href="/doctors">
