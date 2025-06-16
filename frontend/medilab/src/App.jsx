@@ -63,10 +63,9 @@ function App() {
         <Route element={<PrivateRoute />}>
           <Route path="/admin" element={<Admin />} />
         </Route>
-        <Route path="/appointment" element={<Appointment />} />
-
+        <Route path="/myappointment" element={<FindAppointment />} />
         <Route element={<PrivateRoute />}>
-          <Route path="/myappointment" element={<FindAppointment />} />
+          <Route path="/appointment" element={<Appointment />} />
         </Route>
         <Route element={<PrivateRoute />}>
           <Route path="/diet" element={<Diet />} />
